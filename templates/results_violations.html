@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-4">
+    <h2 class="text-center">Résultats de la recherche</h2>
+
+    {% if results %}
+        <div class="d-flex flex-wrap justify-content-center mt-5">
+            {% for row in results %}
+                <div class="card mb-3 mx-2 flex-grow-1" style="max-width: 45%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ row['etablissement'] }}</h5>
+                        <p class="card-text"><strong>Catégorie :</strong> {{ row['categorie'] }}</p>
+                        <p class="card-text"><strong>ID d'entreprise :</strong> {{ row['business_id'] }}</p>
+                        <p class="card-text"><strong>Propriétaire :</strong> {{ row['proprietaire'] }}</p>
+                        <p class="card-text"><strong>Adresse :</strong> {{ row['adresse'] }}</p>
+                        <p class="card-text"><strong>ID de poursuite :</strong> {{ row['id_poursuite'] }}</p>
+                        <p class="card-text"><strong>Description :</strong> {{ row['description'] }}</p>
+                        <p class="card-text"><strong>Date :</strong> {{ row['date'] }}</p>
+                        <p class="card-text"><strong>Ville :</strong> {{ row['ville'] }}</p>
+                        <p class="card-text"><strong>Statut :</strong> {{ row['statut'] }}</p>
+                        <p class="card-text"><strong>Date du statut :</strong> {{ row['date_statut'] }}</p>
+                        <p class="card-text"><strong>Montant :</strong> ${{ row['montant'] }}</p>
+                        <p class="card-text"><strong>Date du jugement :</strong> {{ row['date_jugement'] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">Aucun résultat trouvé.</p>
+    {% endif %}
+</div>
+
+
+{% endblock %}

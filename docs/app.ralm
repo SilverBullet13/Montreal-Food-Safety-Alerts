@@ -1,0 +1,144 @@
+#%RAML 1.0
+title: API of Contraventions
+version: v1
+baseUri: http://localhost:5000
+mediaType: application/json -
+
+types:
+  Violation:
+    type: object
+    properties:
+      etablissement: string
+      business_id: integer
+      categorie: string
+      proprietaire: string
+      adresse: string
+      id_poursuite: integer
+      description: string
+      date: date-only
+      ville: string
+      statut: string
+      date_statut: date-only
+      montant: number
+      date_jugement: date-only
+
+  ViolationSummary:
+    type: object
+    properties:
+      etablissement: string
+      total: integer
+
+/contrevenants:
+  get:
+    description: |
+      Returns either the full list of violations that occurred between two given dates or
+      a list of total violations by establishment during specified period.
+    queryParameters:
+      du:
+        description: Start date (format YYYY-MM-DD)
+        type: string
+        required: true
+        example: 2023-01-01
+      au:
+        description: End date (format YYYY-MM-DD)
+        type: string
+        required: true
+        example: 2023-12-31
+      sum:
+        description: If true, returns the sum of violations by establishment. Otherwise, returns full details.
+        (taken care by javascript)
+        type: boolean
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            type: Violation[] | ViolationSummary []
+      400:
+        description: Invalid or missing date parameters.
+
+
+/contrevenants/etablissement:
+  get:
+    description: Returns all violations for a selected establishment.
+    queryParameters:
+      nom:
+        description: Name of the establishment.
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: Violation[]
+      404:
+        description: No violations found for the specified restaurant.
+
+
+/contrevenants/total-violations:
+  get:
+    description: |
+      Returns a list of all establishments with one or more known violations.
+      Each item includes the number of violations.
+      Results are sorted in descending order of total violations.
+      Supports both JSON (default) and XML (if 'format=' query parameter is used).
+    responses:
+      200:
+        body:
+          application/json:
+            type: ViolationSummary[]
+          application/xml:
+            type: string
+            example: |
+              <?xml version="1.0" encoding="UTF-8"?>
+              <violations>
+                <etablissement>
+                  <nom>BOULANGERIE LA TUNISIENNE</nom>
+                  <total>3</total>
+                </etablissement>
+              </violations>
+          text/csv:
+            example: |
+              etablissement,total
+              BOULANGERIE LA TUNISIENNE,3
+              PALAIS MAHARAJA,2
+
+
+/demand-inspection:
+  post:
+    description: |
+      Submits an inspection request for an establishment.
+      The request body must contain client information and the observed issue.
+    body:
+      application/json:
+        type: InspectionRequest
+    responses:
+      201:
+        description: Inspection request successfully received.
+      400:
+        description: Invalid request (missing or malformed data).
+
+  /{id}:
+    delete:
+      description: Deletes an inspection request by ID.
+      uriParameters:
+        id:
+          type: integer
+          description: ID of the inspection request to delete.
+      responses:
+        200:
+          description: Request successfully deleted.
+          body:
+            application/json:
+              example: |
+                {
+                  "message": "Demande d'inspection #3 supprimée avec succès."
+                }
+        404:
+          description: Request not found.
+          body:
+            application/json:
+              example: |
+                {
+                  "error": "Demande d'inspection introuvable."
+                }

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Search Violations - Cachots!{% endblock %}
+
+{% block content %}
+    <h2 class="text-center mb-4">Contraventions</h2>
+
+    <div class="row justify-content-end">
+        <div class="col-md-2 mb-3 d-flex align-items-end">
+            <a href="{{ url_for('show_inspection_form') }}" class="btn btn-primary w-100">Faire une plainte</a>
+        </div>
+    </div>
+
+<div class="container mt-5 div-border-highlight">
+    <!-- search returned globally if no keyword specified -->
+    <div class="form-section mb-5">
+      <form method="POST" action="/">
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="search_by" class="form-label">Rechercher par:</label>
+            <select class="form-select" id="search_by" name="search_by" required>
+                <option value="" disabled selected>-- Choisir un champ --</option>
+              <option value="etablissement">Nom de l’établissement</option>
+              <option value="proprietaire">Propriétaire</option>
+              <option value="rue">Rue</option>
+            </select>
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="search_value" class="form-label">Nom:</label>
+            <input type="text" id="search_value" name="search_value" class="form-control" required>
+          </div>
+          <div class="col-md-2 mb-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Rechercher</button>
+          </div>
+        </div>
+      </form>
+</div>
+
+</div>
+
+    <div class="container mt-5 div-border-highlight">
+        <h2 class="text-center mb-4">Recherche par date</h2>
+        <div class="form-section mb-5">
+          <form id="date-search-form">
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="du" class="form-label">Date de début</label>
+                <input type="date" id="du" name="du" class="form-control" required>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="au" class="form-label">Date de fin</label>
+                <input type="date" id="au" name="au" class="form-control" required>
+              </div>
+              <div class="col-md-2 mb-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Rechercher</button>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+
+    <div class="table-responsive mt-4" id="summary-table-section" style="display: none;">
+      <h4>Résultats du résumé</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nom de l’établissement</th>
+            <th>Nombre de contraventions</th>
+          </tr>
+        </thead>
+        <tbody id="summary-table-body">
+          <!-- AJAX results go here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="form-section mt-5 mb-5 div-border-highlight">
+      <h2 class="text-center mb-4">Rechercher par établissement</h2>
+      <form id="restaurant-search-form">
+        <div class="row">
+          <div class="col-md-10 mb-3">
+            <label for="restaurant-name" class="form-label">Choisir un établissement :</label>
+            <select id="restaurant-name" name="nom" class="form-select" required>
+                <option value="" disabled selected>-- Choisir un établissement --</option>
+              {% for name in restaurant_names %}
+                  <option value="{{ name }}">{{ name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-2 mb-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Rechercher</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="restaurant-results" class="mt-4" style="display: none;">
+        <h3 class="mb-3">Infractions de l'établissement sélectionné</h3>
+        <div id="restaurant-results-body" class="row g-3">
+            <!-- Résultats injectés par JavaScript -->
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="/static/js/date_search_violations.js"></script>
+    <script src="/static/js/establishment_search.js"></script>
+{% endblock %}
