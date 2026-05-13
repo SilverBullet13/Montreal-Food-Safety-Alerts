@@ -1,6 +1,6 @@
 #### Table of Contents
 1. [About The Project](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#table-of-contents)
-   - Built With
+   - [Built With](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#built-with)
 2. [Getting Started](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#getting-started)
    - [Prerequisites](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#prerequisites)
    - [Installation](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#installation)
@@ -15,6 +15,9 @@ notices during health inspections and provides alerts
 and services based on that information.
 
 #### Built With
+- Python
+- Flask
+- SQLite3
 
 ## Getting Started
 
