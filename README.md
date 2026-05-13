@@ -8,7 +8,7 @@
 4. Roadmap
   
 
-### About The Project
+## About The Project
 
 This project uses public data from the City of Montreal
 to track food establishments that have received violation
@@ -17,7 +17,7 @@ and services based on that information.
 
 #### Built With
 
-### Getting Started
+## Getting Started
 
 #### Prerequisites 
 - python 3.12
@@ -34,7 +34,7 @@ database.
 This command launches the app : 
 - ```python app.py```
 
-### Future Work  
+## Future Work  
 - Complete unfinished features
 - Improve project structure and code readability
 - Refactor parts of code base 
