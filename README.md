@@ -25,15 +25,16 @@ and services based on that information.
 - python 3.12
 
 #### Installation
+1. Clone the repo
+- ```git clone https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts.git```
+2. Install dependecies
 - ```pip install -r requirements.txt```
 
 #### Run
-After installing the necessary requirements, run the following 
-command to collect the data from the City of Montreal public 
+1. Collect the data from the City of Montreal public 
 database.
 - ```python collect_data_script.py```
-
-This command launches the app : 
+2. Launches the app : 
 - ```python app.py```
 
 ## Future Work  
