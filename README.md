@@ -1,11 +1,11 @@
 #### Table of Contents
-1. [About The Project] (https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#table-of-contents)
+1. [About The Project](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#table-of-contents)
    - Built With
-2. [Getting Started] (https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#getting-started)
-   - [Prerequisites] (https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#prerequisites)
-   - [Installation] (https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#installation)
-   - [Run] (https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#run)
-3. [Future Work] (https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#future-work)   
+2. [Getting Started](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#getting-started)
+   - [Prerequisites](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#prerequisites)
+   - [Installation](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#installation)
+   - [Run](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#run)
+3. [Future Work](https://github.com/SilverBullet13/Montreal-Food-Safety-Alerts/blob/main/README.md#future-work)   
 
 ## About The Project
 
