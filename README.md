@@ -34,7 +34,7 @@ and services based on that information.
 1. Collect the data from the City of Montreal public 
 database.
 - ```python collect_data_script.py```
-2. Launches the app : 
+2. Launch the app : 
 - ```python app.py```
 
 ## Future Work  
