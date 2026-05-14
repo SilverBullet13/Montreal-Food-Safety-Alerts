@@ -9,10 +9,9 @@
 
 ## About The Project
 
-This project uses public data from the City of Montreal
-to track food establishments that have received violation
-notices during health inspections and provides alerts 
-and services based on that information.
+Montreal Food Safety Alerts (Cachots!) is a Flask-based web application 
+that allows users to search and explore food safety violations 
+reported by the City of Montreal using public inspection data.
 
 #### Built With
 - Python
