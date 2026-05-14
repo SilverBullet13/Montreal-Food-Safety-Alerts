@@ -43,3 +43,4 @@ database.
 - Refactor parts of code base 
 - Improve dependency and environment setup
 - Continue testing and bug fixing
+- Include screenshots 
