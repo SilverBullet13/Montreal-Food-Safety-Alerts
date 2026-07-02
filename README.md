@@ -37,7 +37,14 @@ database.
    - ```python app.py```
 
 ## Future Work  
-- Complete unfinished features
+- Complete unfinished features : 
+  - Set up a BackgroundScheduler to update the data in the database
+  - Update the RAML document
+  - Add a form to make inspection requests to the city
+  <!-- - Add a "Basic Auth" authentication procedure to restrict access to
+    modification and deletion features only to a predefined user
+  - Add deletion feature
+  - Add modification feature -->
 - Improve project structure and code readability
 - Refactor parts of code base 
 - Improve dependency and environment setup
