@@ -29,7 +29,7 @@ document.getElementById('restaurant-search-form').addEventListener('submit', asy
               <p class="card-text"><strong>Ville:</strong> ${row.ville}</p>
               <p class="card-text"><strong>Statut:</strong> ${row.statut}</p>
               <p class="card-text"><strong>Date Statut:</strong> ${row.date_statut}</p>
-              <p class="card-text"><strong>Montant:</strong> ${row.montant}</p>
+              <p class="card-text"><strong>Montant:</strong> $${row.montant}</p>
               <p class="card-text"><strong>Date Jugement:</strong> ${row.date_jugement}</p>
             </div>
           </div>
